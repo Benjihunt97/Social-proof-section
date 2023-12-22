@@ -1,0 +1,199 @@
+/*
+  custom properties
+*/
+:root {
+  --clr-primary: hsl(300, 43%, 22%);
+  --clr-secondary: hsl(333, 80%, 67%);
+  --clr-magenta-200: hsl(303, 10%, 53%);
+  --clr-magenta-100: hsl(300, 24%, 96%);
+  
+}
+
+/*
+  prefix styling
+*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+  
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+img {
+  display: block;
+}
+
+/*
+  main conatainer
+*/
+.app {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 2rem;
+  
+  margin-block: 2rem;
+  
+  width: 80%;
+}
+
+/*
+  hero section
+*/
+.title {
+  color: var(--clr-primary);
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  width: 15ch;
+  margin-inline: auto;
+}
+
+.info {
+  text-align: center;
+  color: var(--clr-magenta-200);
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+/*
+  rating
+*/
+.rate {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rate-item {
+  text-align: center;
+  padding-block: 20px;
+  
+  background: var(--clr-magenta-100); 
+  border-radius: 10px;
+}
+
+.rate-stars {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 5px;
+}
+
+.rate-title {
+  font-weight: 600;
+  color: var(--clr-primary);
+}
+
+/*
+  comments
+*/
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment-card {
+  
+  padding: 25px;
+  
+  color: white;
+  
+  background: var(--clr-primary);
+  border-radius: 10px;
+}
+
+.comment-text {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.comment-img {
+  width: 45px;
+  height: 45px;
+  
+  border-radius: 50%;
+}
+
+.user-title {
+  color: var(--clr-secondary);
+}
+
+.user-comment {
+  margin-top: 15px;
+  
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .app {
+    grid-template-columns: 40% 55%;
+    column-gap: 4rem;
+    max-width: 900px;
+  }
+  
+  .title {
+    text-align: left;
+    margin: 0;
+  }
+  
+  .info {
+    text-align: left;
+    width: 35ch;
+  }
+  
+  .rate-item {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    
+    width: 380px;
+    
+    padding-left: 20px;
+    
+    text-align: left;
+  }
+  
+  .rate-item:nth-child(2) {
+    margin-left: 20px;
+  }
+  
+  .rate-item:nth-child(3) {
+    margin-left: 40px;
+  }
+  
+  .rate-stars {
+    margin: 0;
+  }
+  
+  .comments {
+    flex-direction: row;
+    grid-column: 1/-1;
+  }
+  
+  .comment-card {
+    height: fit-content;
+    width: 260px;
+  }
+  
+  .comment-card:nth-child(2) {
+    margin-top: 20px;
+  }
+  
+  .comment-card:nth-child(3) {
+    margin-top: 50px;
+  }
+  
+}
